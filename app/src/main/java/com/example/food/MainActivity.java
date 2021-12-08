@@ -1,82 +1,56 @@
 package com.example.food;
 
-import static android.content.ContentValues.TAG;
-
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
+import android.view.MenuItem;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+
+import com.example.food.View.Fragment_order;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
+    Context context;
+    public static BottomNavigationView bottomNav;
 
-    Button btnDK,btnDN;
-    EditText Phone,Passwork;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        bottomNav = findViewById(R.id.bottom_navigation);
+        bottomNav.setOnNavigationItemSelectedListener(navListener);
+        //I added this if statement to keep the selected fragment when rotating the device
 
-        btnDK = findViewById(R.id.DK);
-        btnDN = findViewById(R.id.DN);
-        Phone = findViewById(R.id.SDT);
-        Passwork = findViewById(R.id.passwork);
-
-
-        btnDK.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Phone.setText("");
-                Passwork.setText("");
-                Intent intent = new Intent(MainActivity.this,DangKy.class);
-                startActivity(intent);
-            }
-        });
-        btnDN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getData();
-            }
-        });
+        context = this;
 
     }
-
-
-    private void getData() {
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("User");
-        myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot.child(Phone.getText().toString()).exists()) {
-                    User user = dataSnapshot.child(Phone.getText().toString()).getValue(User.class);
-                    if (user.getPasswork().equals(Passwork.getText().toString())){
-                        Toast.makeText(MainActivity.this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
+    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    Fragment selectedFragment = null;
+                    switch (item.getItemId()) {
+                        case R.id.nav_home:
+                            break;
+                        case R.id.nav_order:
+                            selectedFragment = new Fragment_order();
+                            break;
+                        case R.id.nav_store:
+                            break;
+                        case R.id.nav_coupon:
+                            break;
+                        case R.id.nav_else:
+                            break;
                     }
-                    else {
-                        Toast.makeText(MainActivity.this, "Nhập sai mật khẩu", Toast.LENGTH_SHORT).show();
-                    }
+                    try {
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                                selectedFragment).commit();
+                    }catch (Exception e){
 
-                } else {
-                    Toast.makeText(MainActivity.this, "Số điện thoại chưa đăng ký", Toast.LENGTH_SHORT).show();
+                    }
+                    return true;
                 }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-
-            }
-        });
-    }
-
-
+            };
 }

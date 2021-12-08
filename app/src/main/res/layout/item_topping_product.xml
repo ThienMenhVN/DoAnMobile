@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="10"
+    android:layout_marginHorizontal="5dp">
+    <CheckBox
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBox"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="11dp"
+        android:layout_marginEnd="5dp"
+        android:clickable="false"/>
+    <TextView
+        android:id="@+id/nameTopping"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:text="size name"/>
+    <TextView
+        android:id="@+id/priceTopping"
+        android:layout_width="0dp"
+        android:gravity="right"
+        android:layout_height="wrap_content"
+        android:layout_weight="3"
+        android:text="size price"/>
+    <TextView
+        android:layout_width="0dp"
+        android:gravity="right"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:text="VNĐ"/>
+</LinearLayout>
