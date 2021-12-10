@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray">
+
+    <RelativeLayout
+        android:background="@color/white"
+        android:id="@+id/relaImageInfo"
+        android:layout_width="match_parent"
+        android:layout_height="220dp" >
+
+        <ImageView
+            android:id="@+id/imgCancelInfo"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/cancel_2" />
+
+        <ImageView
+            android:layout_marginTop="60dp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/imgInfo"
+            android:layout_width="80dp"
+            android:layout_height="80dp" />
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/imgInfo"
+            android:id="@+id/txtNameInfo"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/txtKhach"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txtNameInfo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text="Khách hàng mới" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relaText"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_below="@+id/relaImageInfo"
+        android:layout_marginTop="5dp"
+        android:background="@color/gray">
+
+        <TextView
+            android:id="@+id/txtInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:background="@color/gray"
+            android:text="Thông tin cá nhân"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="180dp"
+            android:layout_toRightOf="@+id/txtInfo"
+            android:text="Đổi"
+            android:textColor="#192A8A"
+            android:textSize="18dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:background="@color/white"
+        android:layout_below="@+id/relaText"
+        android:id="@+id/relaInfoDetail"
+        android:layout_width="match_parent"
+        android:layout_height="190dp" >
+
+        <RelativeLayout
+
+            android:id="@+id/relaName"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <TextView
+                android:id="@+id/textTitleName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:text="Tên"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/txtNameDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textTitleName"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+
+            android:layout_below="@+id/relaName"
+            android:id="@+id/relaDate"
+            android:layout_width="match_parent"
+            android:layout_height="60dp" >
+
+            <TextView
+                android:id="@+id/textTitlePhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:text="Số điện thoại"
+                android:textSize="16dp" />
+
+            <TextView
+                android:textColor="@color/black"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/txtDetailPhone"
+                android:layout_below="@+id/textTitlePhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relaPhones"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/relaDate">
+
+            <TextView
+                android:id="@+id/textTitleEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:text="Email"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/txtEmailDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textTitleEmail"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/black" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>
