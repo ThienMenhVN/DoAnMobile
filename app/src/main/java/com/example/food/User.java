@@ -5,18 +5,17 @@ public class User {
     private String passwork;
     private String name;
     private String address;
+    private String phone;
 
     public User() {
     }
 
-    public User(String passwork, String name, String address) {
-
+    public User(String passwork, String name, String address, String phone) {
         this.passwork = passwork;
         this.name = name;
         this.address = address;
+        this.phone = phone;
     }
-
-
 
     public String getPasswork() {
         return passwork;
@@ -42,4 +41,11 @@ public class User {
         this.address = address;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 }

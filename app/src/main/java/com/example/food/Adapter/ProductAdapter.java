@@ -5,6 +5,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -58,6 +59,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                 TextView description =productDetails.findViewById(R.id.description);
                 totalMoney = productDetails.findViewById(R.id.totalMoney);
                 TextView numberProductDetail = productDetails.findViewById(R.id.numberProductDetail);
+
                 name.setText(product.getName());
                 price.setText(product.getPrice());
                 image.setImageResource(product.getImg());

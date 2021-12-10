@@ -308,7 +308,7 @@
                         android:layout_alignParentEnd="true"
                         android:layout_marginTop="11dp"
                         android:layout_marginRight="25dp"
-                        android:text="@{cart.currency}"
+                        android:text="100.000"
                         android:textColor="@color/grey"
                         android:textSize="18sp" />
 
@@ -320,11 +320,43 @@
                         android:layout_marginTop="10dp"
                         android:background="#d3d3d3" />
 
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/text_choosepromotion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/view5"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="15dp"
+                        android:text="Chọn khuyến mãi"
+                        android:textColor="#5bb1cd"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/txt_promotion_code"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/view5"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_toLeftOf="@+id/select_promotion"
+                        android:text=""
+                        android:textSize="16sp" />
+
+                    <ImageButton
+                        android:id="@+id/select_promotion"
+                        android:layout_width="25dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/view5"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="15dp"
+                        android:background="@drawable/ic_baseline_arrow_forward_ios_24" />
+
                     <View
                         android:id="@+id/view6"
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_below="@id/view5"
+                        android:layout_below="@id/text_choosepromotion"
                         android:layout_marginTop="15dp"
                         android:background="#d3d3d3" />
 
@@ -348,9 +380,10 @@
                         android:layout_alignParentEnd="true"
                         android:layout_marginTop="15dp"
                         android:layout_marginRight="25dp"
-                        android:text="@{cart.currency}"
+                        android:text="100.000"
                         android:textColor="@color/grey"
                         android:textSize="18sp" />
+
 
                 </RelativeLayout>
 
@@ -392,7 +425,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginTop="10dp"
-                android:backgroundTint="@color/accent_color">
+                android:backgroundTint="@color/orange">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -404,7 +437,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
                         android:layout_marginTop="15dp"
-                        android:text="@{cart.amountQuantity}"
+                        android:text="1 san pham"
                         android:textColor="@color/white"
                         android:textSize="18sp" />
 
@@ -414,7 +447,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/text_orderamount"
                         android:layout_marginLeft="20dp"
-                        android:text="@{cart.totalCurrency}"
+                        android:text="59.000"
                         android:textColor="@color/white"
                         android:textSize="18sp"
                         android:textStyle="bold" />
