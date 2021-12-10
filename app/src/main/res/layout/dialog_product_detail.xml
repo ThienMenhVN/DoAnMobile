@@ -192,11 +192,7 @@
                     android:layout_margin="10dp"
                     android:layout_weight="1"
                     android:background="#FF5722"
-<<<<<<< HEAD
                     android:text="Thêm vào giỏ hàng"
-=======
-                    android:text="Đặt hàng"
->>>>>>> 0b73bc163f7026ff4f9f6c38b4f0fd1776ee4672
                     android:textColor="#fff" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
