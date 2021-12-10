@@ -59,8 +59,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                 TextView description =productDetails.findViewById(R.id.description);
                 totalMoney = productDetails.findViewById(R.id.totalMoney);
                 TextView numberProductDetail = productDetails.findViewById(R.id.numberProductDetail);
-                Button Add = productDetails.findViewById(R.id.buttonBuyDetail);
-A
+                
                 name.setText(product.getName());
                 price.setText(product.getPrice());
                 image.setImageResource(product.getImg());
@@ -132,12 +131,6 @@ A
                     }
                 });
                 productDetails.show();
-                Add.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-
-                    }
-                });
             }
         });
 
