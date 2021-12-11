@@ -109,11 +109,7 @@ public class Item_order_coffee extends Fragment {
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-
-
                 myRef.child(product.getName().toString()).setValue(product);
-
-
             }
 
             @Override

@@ -2,6 +2,7 @@ package com.example.food.Adapter;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,11 @@ import com.example.food.Model.Product_order;
 import com.example.food.Model.Topping;
 import com.example.food.R;
 import com.example.food.View.Fragment_order;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -135,11 +141,11 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                         }
                     }
                 });
+
                 Add.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
-                        Toast.makeText(Add.getContext(), "ALooo", Toast.LENGTH_SHORT).show();
+                        getData(product.getName());
                     }
                 });
                 productDetails.show();
@@ -188,6 +194,22 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             itemClickListener.onClick(v,getAdapterPosition(),true);
             return true;
         }
+    }
+    private void getData(String product) {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("Order_view");
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                myRef.child(product).setValue(product);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+
+        });
     }
 
 }
