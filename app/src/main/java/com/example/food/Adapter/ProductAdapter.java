@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -17,11 +18,12 @@ import com.example.food.Model.Product;
 import com.example.food.Model.Product_order;
 import com.example.food.Model.Topping;
 import com.example.food.R;
+import com.example.food.View.Fragment_order;
 
 import java.util.ArrayList;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHolder> {
-    private ArrayList<Product> productArrayList;
+    private ArrayList<Product> productArrayList,productArrayList2;
     private Context context;
     public static Dialog productDetails;
     public static TextView totalMoney;
@@ -59,6 +61,9 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                 TextView description =productDetails.findViewById(R.id.description);
                 totalMoney = productDetails.findViewById(R.id.totalMoney);
                 TextView numberProductDetail = productDetails.findViewById(R.id.numberProductDetail);
+                Button Add = productDetails.findViewById(R.id.buttonBuyDetail);
+
+
 
                 name.setText(product.getName());
                 price.setText(product.getPrice());
@@ -130,8 +135,16 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                         }
                     }
                 });
+                Add.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        Toast.makeText(Add.getContext(), "ALooo", Toast.LENGTH_SHORT).show();
+                    }
+                });
                 productDetails.show();
             }
+
         });
 
 
