@@ -41,7 +41,6 @@ public class Order_view extends AppCompatActivity {
         setContentView(viewRoot);
 
         Intent intent = getIntent();
-
         
         binding.closeCartInfo.setOnClickListener(new View.OnClickListener() {
             @Override

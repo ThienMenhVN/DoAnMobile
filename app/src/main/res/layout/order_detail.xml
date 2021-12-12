@@ -89,14 +89,14 @@
                         android:layout_marginTop="16dp"
                         android:background="@color/brown" />
 
-                    <androidx.appcompat.widget.AppCompatTextView
+                    <EditText
                         android:id="@+id/text_destination"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/view"
                         android:layout_marginLeft="15dp"
                         android:layout_marginTop="16dp"
-                        android:text="Tên Địa chỉ"
+                        android:hint="Địa chỉ"
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         android:textStyle="bold" />

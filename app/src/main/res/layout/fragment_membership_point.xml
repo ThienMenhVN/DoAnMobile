@@ -243,7 +243,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
                         android:layout_marginTop="5dp"
-                        android:text="Phiếu ưu đãi của bạn"
+                        android:text="Phiếu ưu đãi"
                         android:textColor="@color/black"
                         android:textSize="17sp" />
 
@@ -260,7 +260,7 @@
                 android:layout_below="@id/cardView_changePromotion"
                 android:layout_alignStart="@+id/cardView_changePromotion"
                 android:layout_marginTop="25dp"
-                android:text="Phiếu ưu đãi của bạn"
+                android:text="Phiếu ưu đãi "
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold" />

@@ -13,6 +13,7 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import com.example.food.Model.Product;
+import com.example.food.View.Fragment_membership;
 import com.example.food.View.Fragment_order;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
@@ -85,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.nav_store:
                             break;
                         case R.id.nav_coupon:
+                            selectedFragment = new Fragment_membership();
                             break;
                         case R.id.nav_else:
                             selectedFragment = new Fragment_user();
