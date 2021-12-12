@@ -31,8 +31,14 @@ public class MainActivity extends AppCompatActivity {
     public static BottomNavigationView bottomNav;
 
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    new Trang_chu()).commit();
+        }
 
         bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
@@ -46,11 +52,10 @@ public class MainActivity extends AppCompatActivity {
             Log.d("5678", "rong ");
         }
         if (Phone != null){
-            FragmentTransaction fragmentManager = getSupportFragmentManager().beginTransaction();
-
-            fragmentManager.replace(R.id.main, new Fragment_order()).commit();
-
-
+            if (savedInstanceState == null) {
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new Trang_chu()).commit();
+            }
             Log.d("1234", Phone);
         }
 

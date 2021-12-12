@@ -53,6 +53,7 @@ public class Fragment_user extends Fragment {
             public void onClick(View v) {
                 Intent i = new Intent(getActivity(), InfomationActivity.class);
                 startActivity(i);
+                getActivity().finish();
             }
         });
 

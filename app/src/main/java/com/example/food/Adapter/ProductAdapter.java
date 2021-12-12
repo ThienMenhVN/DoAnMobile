@@ -2,11 +2,13 @@ package com.example.food.Adapter;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.food.Model.Product;
 import com.example.food.Model.Product_order;
-import com.example.food.Model.Topping;
+import com.example.food.Order_view;
 import com.example.food.R;
 
 import java.util.ArrayList;
@@ -71,7 +73,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                 product_order.setPrice(priceProductDetail);
                 product_order.setQuantity(Integer.parseInt((String) numberProductDetail.getText()));
                 product_order.setPriceSize(0);
-                product_order.setToppingArrayList(new ArrayList<Topping>());
 
                 if (product.getSize().isEmpty()){
                     productDetails.findViewById(R.id.Size).setVisibility(View.GONE);
@@ -83,21 +84,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                 listSize.setAdapter(sizeAdapter);
 
                 listSize.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-
-                    }
-                });
-
-                if (product.getTopping().isEmpty()){
-                    productDetails.findViewById(R.id.Topping).setVisibility(View.GONE);
-                }
-                RecyclerView listTopping = productDetails.findViewById(R.id.list_topping_product);
-                ToppingAdapter toppingAdapter = new ToppingAdapter(product.getTopping(),context);
-                listTopping.setAdapter(toppingAdapter);
-                LinearLayoutManager layoutManager1 = new LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false);
-                listTopping.setLayoutManager(layoutManager1);
-                listTopping.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
 
@@ -128,6 +114,23 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                         if (product_order.getQuantity()>1){
                             productDetails.findViewById(R.id.remove).setClickable(true);
                         }
+                    }
+                });
+                productDetails.findViewById(R.id.buttonBuyDetail).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        RadioGroup radioGroup = productDetails.findViewById(R.id.radioGroup);
+                        RadioButton selectedRadioButton  = (RadioButton)productDetails.findViewById(radioGroup.getCheckedRadioButtonId());
+                        String quantityOrder = numberProductDetail.getText().toString();
+                        String nameOrder = name.getText().toString();
+                        String sizeOrder = selectedRadioButton.getText().toString();
+                        String priceOrder = totalMoney.getText().toString();
+
+                        Intent intent = new Intent(v.getContext(), Order_view.class);
+                        intent.putExtra("quantity", quantityOrder);
+                        intent.putExtra("name", nameOrder);
+                        intent.putExtra("size", sizeOrder);
+                        intent.putExtra("price", priceOrder);
                     }
                 });
                 productDetails.show();

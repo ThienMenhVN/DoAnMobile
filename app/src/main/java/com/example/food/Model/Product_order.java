@@ -6,7 +6,6 @@ public class Product_order {
     private int quantity;
     private int price;
     private int priceSize;
-    private ArrayList<Topping> toppingArrayList;
 
 
     public Product_order() {
@@ -36,21 +35,8 @@ public class Product_order {
         this.priceSize = priceSize;
     }
 
-    public ArrayList<Topping> getToppingArrayList() {
-        return toppingArrayList;
-    }
-
-    public void setToppingArrayList(ArrayList<Topping> toppingArrayList) {
-        this.toppingArrayList = toppingArrayList;
-    }
-
     public int getTotalMoney(){
         int totalmoneyoftopping = 0;
-        if (toppingArrayList != null ){
-            for (Topping topping : toppingArrayList) {
-                totalmoneyoftopping += Integer.parseInt(topping.getPrice());
-            }
-        }
-        return (price+priceSize+totalmoneyoftopping)*quantity;
+        return (price+priceSize)*quantity;
     }
 }

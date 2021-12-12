@@ -8,21 +8,17 @@ public class Product implements Serializable {
     private String description;
     private String price;
     private ArrayList<Size> size;
-    private ArrayList<Topping> topping;
     private String category;
     private int img;
 
     public Product() {
-        this.setSize(new ArrayList<Size>());
-        this.setTopping(new ArrayList<Topping>());
-    }
+        this.setSize(new ArrayList<Size>());}
 
-    public Product(String name, String description, String price, ArrayList<Size> size, ArrayList<Topping> topping) {
+    public Product(String name, String description, String price, ArrayList<Size> size) {
         this.name = name;
         this.description = description;
         this.price = price;
         this.size = size;
-        this.topping = topping;
     }
 
     public String getName() {
@@ -55,14 +51,6 @@ public class Product implements Serializable {
 
     public void setSize(ArrayList<Size> size) {
         this.size = size;
-    }
-
-    public ArrayList<Topping> getTopping() {
-        return topping;
-    }
-
-    public void setTopping(ArrayList<Topping> topping) {
-        this.topping = topping;
     }
 
     public String getCategory() {
