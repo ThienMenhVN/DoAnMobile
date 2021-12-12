@@ -2,36 +2,34 @@ package com.example.food;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
+import com.example.food.Model.Product;
 import com.example.food.View.Fragment_order;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
     Context context;
+    String data;
 
     public static CardView orderDetail;
     public static BottomNavigationView bottomNav;
 
     protected void onCreate(Bundle savedInstanceState) {
-
+        Fragment_order fragment_order = new Fragment_order();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -56,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new Trang_chu()).commit();
             }
-            Log.d("1234", Phone);
+            data = Phone;
         }
 
         orderDetail = findViewById(R.id.order_view);
@@ -64,6 +62,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,Order_view.class);
+                if (data != null){
+                    intent.putExtra("key",data);
+                }
                 startActivity(intent);
             }
         });
@@ -98,4 +99,25 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 }
             };
+
+    private void getData(String product) {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("Order_view");
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+
+                myRef.child(product).setValue(product);
+
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+
+        });
+    }
 }

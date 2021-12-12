@@ -6,10 +6,12 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -19,11 +21,17 @@ import com.example.food.Model.Product;
 import com.example.food.Model.Product_order;
 import com.example.food.Order_view;
 import com.example.food.R;
+import com.example.food.View.Fragment_order;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHolder> {
-    private ArrayList<Product> productArrayList;
+    private ArrayList<Product> productArrayList,productArrayList2;
     private Context context;
     public static Dialog productDetails;
     public static TextView totalMoney;
@@ -61,6 +69,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                 TextView description =productDetails.findViewById(R.id.description);
                 totalMoney = productDetails.findViewById(R.id.totalMoney);
                 TextView numberProductDetail = productDetails.findViewById(R.id.numberProductDetail);
+                Button Add = productDetails.findViewById(R.id.buttonBuyDetail);
 
                 name.setText(product.getName());
                 price.setText(product.getPrice());
@@ -116,7 +125,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                         }
                     }
                 });
-                productDetails.findViewById(R.id.buttonBuyDetail).setOnClickListener(new View.OnClickListener() {
+                Add.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         RadioGroup radioGroup = productDetails.findViewById(R.id.radioGroup);
@@ -135,6 +144,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                 });
                 productDetails.show();
             }
+
         });
 
 
@@ -178,6 +188,22 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             itemClickListener.onClick(v,getAdapterPosition(),true);
             return true;
         }
+    }
+    private void getData(String product) {
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("Order_view");
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                myRef.child(product).setValue(product);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+
+        });
     }
 
 }
