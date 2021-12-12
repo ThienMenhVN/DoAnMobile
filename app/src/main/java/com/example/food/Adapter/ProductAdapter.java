@@ -18,6 +18,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.food.MainActivity;
+import com.example.food.Model.Bill;
 import com.example.food.Model.Product;
 import com.example.food.Model.Product_order;
 import com.example.food.Order_view;
@@ -32,7 +34,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHolder> {
-    private ArrayList<Product> productArrayList,productArrayList2;
+    private ArrayList<Product> productArrayList;
     private Context context;
     public static Dialog productDetails;
     public static TextView totalMoney;
@@ -128,21 +130,19 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                 });
                 Add.setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onClick(View v) {
-                        Intent intent1 = ((Activity) context).getIntent();
+                    public void onClick(View view) {
+                        Integer m = product_order.getTotalMoney();
+                        String s = product.getName();
+                        String s1 = m.toString();
+                        String s2 = numberProductDetail.getText().toString();
 
-                        String quantityOrder = String.valueOf(product_order.getQuantity());
-                        String nameOrder = product.getName();
-                        String sizeOrder = intent1.getStringExtra("sizeName");
-                        String priceOrder = String.valueOf(product_order.getTotalMoney());
+                        Bill bill = new Bill();
+                        bill.setName(s);
+                        bill.setMoney(s1);
+                        bill.setSoLuong(s2);
+                        bill.setNameSize("Vừa");
+                        putData(bill);
 
-                        Intent intent = new Intent(v.getContext(), Order_view.class);
-                        intent.putExtra("quantity", quantityOrder);
-                        intent.putExtra("name", nameOrder);
-                        intent.putExtra("size", sizeOrder);
-                        intent.putExtra("price", priceOrder);
-
-                        productDetails.dismiss();
                     }
                 });
                 productDetails.show();
@@ -192,13 +192,13 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             return true;
         }
     }
-    private void getData(String product) {
+    private void putData(Bill product) {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("Order_view");
         myRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                myRef.child(product).setValue(product);
+                myRef.child(product.getName()).setValue(product);
             }
 
             @Override

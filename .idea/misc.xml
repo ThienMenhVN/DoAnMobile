@@ -42,7 +42,21 @@
         <entry key="..\:/Users/PC/AndroidStudioProjects/Food/app/src/main/res/layout/activity_main.xml" value="0.4049586776859504" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/Food/app/src/main/res/layout/dang_ky.xml" value="0.4" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/Food/app/src/main/res/layout/dang_nhap.xml" value="0.24635416666666668" />
+        <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/activity_dang_ky.xml" value="0.12916666666666668" />
+        <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/activity_fragment_user.xml" value="0.12916666666666668" />
+        <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/activity_history.xml" value="0.12916666666666668" />
+        <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/activity_infomation.xml" value="0.12916666666666668" />
         <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/dialog_product_detail.xml" value="0.12916666666666668" />
+        <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/fragment_dang_nhap.xml" value="0.12708333333333333" />
+        <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/fragment_item_order_coffee.xml" value="0.12916666666666668" />
+        <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/fragment_membership.xml" value="0.12916666666666668" />
+        <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/fragment_membership_coupon.xml" value="0.12916666666666668" />
+        <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/fragment_order.xml" value="0.16458333333333333" />
+        <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/item_product.xml" value="0.12916666666666668" />
+        <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/item_size_product.xml" value="0.12916666666666668" />
+        <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/order_detail.xml" value="0.2" />
+        <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/order_detail_item.xml" value="0.4" />
       </map>
     </option>
   </component>

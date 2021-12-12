@@ -34,6 +34,7 @@
         android:layout_marginLeft="90dp"
         android:textColor="#000000"
         android:textColorHint="#C8C1C1"
+        android:inputType="textPassword"
         >
     </EditText>
 

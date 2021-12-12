@@ -11,15 +11,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.food.Model.Bill;
 import com.example.food.Model.Order_item;
 import com.example.food.R;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
 public class OrderItemAdapter extends RecyclerView.Adapter<OrderItemAdapter.ViewHolder> {
-    ArrayList<Order_item> orderItemArrayList;
+    ArrayList<Bill> orderItemArrayList;
 
-    public OrderItemAdapter(ArrayList<Order_item> orderItemArrayList) {
+    public OrderItemAdapter(ArrayList<Bill> orderItemArrayList) {
         this.orderItemArrayList = orderItemArrayList;
     }
 
@@ -32,10 +35,10 @@ public class OrderItemAdapter extends RecyclerView.Adapter<OrderItemAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        holder.orderQuantity.setText(orderItemArrayList.get(position).getQuantity());
+        holder.orderQuantity.setText(orderItemArrayList.get(position).getSoLuong());
         holder.orderName.setText(orderItemArrayList.get(position).getName());
-        holder.orderSize.setText(orderItemArrayList.get(position).getSize());
-        holder.orderPrice.setText(orderItemArrayList.get(position).getPrice());
+        holder.orderSize.setText(orderItemArrayList.get(position).getNameSize());
+        holder.orderPrice.setText(orderItemArrayList.get(position).getMoney());
         holder.deleteItemOnClick(orderItemArrayList, position);
     }
 
@@ -54,15 +57,22 @@ public class OrderItemAdapter extends RecyclerView.Adapter<OrderItemAdapter.View
         public ViewHolder(@NonNull View itemView){
             super(itemView);
             orderQuantity = itemView.findViewById(R.id.text_item_quantity);
-            orderName = itemView.findViewById(R.id.text_item_quantity);
-            orderSize = itemView.findViewById(R.id.text_item_quantity);
-            orderPrice = itemView.findViewById(R.id.text_item_quantity);
+            orderName = itemView.findViewById(R.id.text_itemname);
+            orderSize = itemView.findViewById(R.id.text_itemsize);
+            orderPrice = itemView.findViewById(R.id.text_itemprice);
+
         }
 
-        public void deleteItemOnClick(ArrayList<Order_item> orderItemArrayList, int position) {
+        public void deleteItemOnClick(ArrayList<Bill> orderItemArrayList, int position) {
             deleteButton = itemView.findViewById(R.id.bush);
             deleteButton.setOnClickListener(view -> {
                 orderItemArrayList.remove(position);
+
+                Bill bill = new Bill();
+                bill = orderItemArrayList.get(position);
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference myRef1 = database.getReference("Order_view/"+bill.getName());
+                myRef1.removeValue();
                 notifyDataSetChanged();
             });
         }
