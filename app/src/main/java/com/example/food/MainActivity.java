@@ -48,7 +48,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String Phone = intent.getStringExtra("PhoneAccount");
         if (Phone == null){
-            Log.d("5678", "rong ");
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+            DatabaseReference myRef = database.getReference("Order_view");
+            myRef.removeValue();
         }
         if (Phone != null){
             if (savedInstanceState == null) {
@@ -56,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
                         new Trang_chu()).commit();
             }
             data = Phone;
+            Log.d("333", data);
         }
 
         orderDetail = findViewById(R.id.order_view);
@@ -65,8 +68,9 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this,Order_view.class);
                 if (data != null){
                     intent.putExtra("key",data);
+                    startActivity(intent);
                 }
-                startActivity(intent);
+
             }
         });
 
