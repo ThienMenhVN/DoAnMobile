@@ -1,11 +1,14 @@
 package com.example.food.Adapter;
 
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.food.Model.Bill;
 import com.example.food.Model.Order_item;
+import com.example.food.Order_view;
 import com.example.food.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -21,7 +25,7 @@ import java.util.ArrayList;
 
 public class OrderItemAdapter extends RecyclerView.Adapter<OrderItemAdapter.ViewHolder> {
     ArrayList<Bill> orderItemArrayList;
-
+    Bill bill = new Bill();
     public OrderItemAdapter(ArrayList<Bill> orderItemArrayList) {
         this.orderItemArrayList = orderItemArrayList;
     }
@@ -68,12 +72,15 @@ public class OrderItemAdapter extends RecyclerView.Adapter<OrderItemAdapter.View
             deleteButton.setOnClickListener(view -> {
                 orderItemArrayList.remove(position);
                 notifyDataSetChanged();
-
                 Bill bill = new Bill();
                 bill = orderItemArrayList.get(position);
+                Log.d("test", bill.getName());
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef1 = database.getReference("Order_view/"+bill.getName());
-                myRef1.removeValue();
+                DatabaseReference myRef1 = database.getReference("Order_view");
+                myRef1.child(bill.getName()).removeValue();
+//                FirebaseDatabase.getInstance().setPersistenceEnabled(false);
+                orderItemArrayList.remove(position);
+                notifyDataSetChanged();
             });
         }
     }

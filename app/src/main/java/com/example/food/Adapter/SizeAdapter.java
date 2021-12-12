@@ -29,6 +29,14 @@ public class SizeAdapter extends RecyclerView.Adapter<SizeAdapter.ViewHolder>{
         this.context = context;
     }
 
+    public int getLastCheckedPosition() {
+        return lastCheckedPosition;
+    }
+
+    public void setLastCheckedPosition(int lastCheckedPosition) {
+        this.lastCheckedPosition = lastCheckedPosition;
+    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -40,11 +48,11 @@ public class SizeAdapter extends RecyclerView.Adapter<SizeAdapter.ViewHolder>{
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.size.setText(sizeArrayList.get(position).getName());
         holder.price.setText(sizeArrayList.get(position).getPrice());
-        holder.radioButton.setChecked(position == lastCheckedPosition);
+        holder.radioButton.setChecked(position == getLastCheckedPosition());
         holder.setItemClickListener(new ItemClickListener() {
             @Override
             public void onClick(View view, int position, boolean isLongClick) {
-                lastCheckedPosition = holder.getAdapterPosition();
+                setLastCheckedPosition(holder.getAdapterPosition());
                 notifyDataSetChanged();
                 int priceSize;
                 try {
@@ -55,9 +63,6 @@ public class SizeAdapter extends RecyclerView.Adapter<SizeAdapter.ViewHolder>{
                 Product_order product_order = ProductAdapter.product_order;
                 product_order.setPriceSize(priceSize);
                 ProductAdapter.totalMoney.setText(String.valueOf(product_order.getTotalMoney()));
-                String sizeName = sizeArrayList.get(position).getName();
-                Intent intent = new Intent(view.getContext(), ProductAdapter.class);
-                intent.putExtra("sizeName", sizeName);
             }
         });
     }
