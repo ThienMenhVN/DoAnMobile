@@ -28,7 +28,7 @@ import com.google.firebase.database.ValueEventListener;
 public class Order_view extends AppCompatActivity {
     private OrderDetailBinding binding;
     private RecyclerView.Adapter adapter;
-    String s = "";
+    String s, quantity, name, size, price = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,23 +41,7 @@ public class Order_view extends AppCompatActivity {
         setContentView(viewRoot);
 
         Intent intent = getIntent();
-        s = intent.getStringExtra("key");
-        Log.d("key", s);
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("User");
-        myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                User  user = snapshot.child(s).getValue(User.class);
-                binding.textName.setText(user.getName());
-                binding.textPhoneNumber.setText(user.getPhone());
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
         
         binding.closeCartInfo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,18 +49,20 @@ public class Order_view extends AppCompatActivity {
                 onBackPressed();
             }
         });
+
+        quantity = intent.getStringExtra("quantity");
+        name = intent.getStringExtra("name");
+        size = intent.getStringExtra("size");
+        price = intent.getStringExtra("price");
+        cartViewItem(quantity,name,size,price);
     }
 
-    private void cartViewItem(){
+    private void cartViewItem(String quantity, String name, String size, String price){
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false);
         binding.cartRecyclerView.setLayoutManager(linearLayoutManager);
 
         ArrayList<Order_item> orderItems=new ArrayList<>();
-        orderItems.add(new Order_item("Pumpkin Hummus", "shop1", "Beyti Restaurant, Taksim", "4.8","(233 ratings)"));
-        orderItems.add(new Order_item("Sweets Baklava with Nuts", "shop2", "Karaköy Güllüoğlu, Beyoğlu", "4.8","(233 ratings)"));
-        orderItems.add(new Order_item("Fish", "shop3", "Mercan, Kadıköy", "4.8","(233 ratings)"));
-        orderItems.add(new Order_item("Meat Pizza With Chicken", "shop4", "Karaköy Güllüoğlu, Beyoğlu", "4.8","(233 ratings)"));
-        orderItems.add(new Order_item("Wood Fired Pizza", "shop5", "Beyti Restaurant, Taksim", "4.8","(233 ratings)"));
+        orderItems.add(new Order_item(quantity,name,size,price));
 
         adapter = new OrderItemAdapter(orderItems);
         binding.cartRecyclerView.setAdapter(adapter);

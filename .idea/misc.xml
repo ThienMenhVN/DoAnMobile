@@ -34,7 +34,7 @@
         <entry key="..\:/HK5/LTDD/DoAnMobile/app/src/main/res/layout/item_size_product.xml" value="0.3828571428571429" />
         <entry key="..\:/HK5/LTDD/DoAnMobile/app/src/main/res/layout/item_topping_product.xml" value="0.1" />
         <entry key="..\:/HK5/LTDD/DoAnMobile/app/src/main/res/layout/order_detail.xml" value="0.2857142857142857" />
-        <entry key="..\:/HK5/LTDD/DoAnMobile/app/src/main/res/layout/order_detail_item.xml" value="0.3069306930693069" />
+        <entry key="..\:/HK5/LTDD/DoAnMobile/app/src/main/res/layout/order_detail_item.xml" value="0.1" />
         <entry key="..\:/HK5/LTDD/DoAnMobile/app/src/main/res/layout/toolbar.xml" value="0.14221014492753623" />
         <entry key="..\:/HK5/LTDD/DoAnMobile/app/src/main/res/layout/viewholder_order.xml" value="0.14635416666666667" />
         <entry key="..\:/HK5/LTDD/DoAnMobile/app/src/main/res/menu/bottom_navigation.xml" value="0.18857142857142858" />
@@ -42,17 +42,7 @@
         <entry key="..\:/Users/PC/AndroidStudioProjects/Food/app/src/main/res/layout/activity_main.xml" value="0.4049586776859504" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/Food/app/src/main/res/layout/dang_ky.xml" value="0.4" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/Food/app/src/main/res/layout/dang_nhap.xml" value="0.24635416666666668" />
-        <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/activity_fragment_user.xml" value="0.152" />
-        <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/activity_sign_in.xml" value="0.12708333333333333" />
-        <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/dialog_product_detail.xml" value="0.176" />
-        <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/fragment_item_order_coffee.xml" value="0.264" />
-        <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/fragment_membership.xml" value="0.176" />
-        <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/fragment_membership_coupon.xml" value="0.264" />
-        <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/fragment_order.xml" value="0.1947463768115942" />
-        <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/header.xml" value="0.2391304347826087" />
-        <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/order_detail.xml" value="0.536" />
-        <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/menu/bottom_navigation.xml" value="0.264" />
+        <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/activity_main.xml" value="0.25" />
       </map>
     </option>
   </component>

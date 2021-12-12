@@ -60,7 +60,7 @@ public class OrderItemAdapter extends RecyclerView.Adapter<OrderItemAdapter.View
         }
 
         public void deleteItemOnClick(ArrayList<Order_item> orderItemArrayList, int position) {
-            deleteButton = itemView.findViewById(R.id.text_item_quantity);
+            deleteButton = itemView.findViewById(R.id.bush);
             deleteButton.setOnClickListener(view -> {
                 orderItemArrayList.remove(position);
                 notifyDataSetChanged();

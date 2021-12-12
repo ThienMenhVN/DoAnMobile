@@ -1,5 +1,6 @@
 package com.example.food.Adapter;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -128,18 +129,20 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                 Add.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        RadioGroup radioGroup = productDetails.findViewById(R.id.radioGroup);
-                        RadioButton selectedRadioButton  = (RadioButton)productDetails.findViewById(radioGroup.getCheckedRadioButtonId());
-                        String quantityOrder = numberProductDetail.getText().toString();
-                        String nameOrder = name.getText().toString();
-                        String sizeOrder = selectedRadioButton.getText().toString();
-                        String priceOrder = totalMoney.getText().toString();
+                        Intent intent1 = ((Activity) context).getIntent();
+
+                        String quantityOrder = String.valueOf(product_order.getQuantity());
+                        String nameOrder = product.getName();
+                        String sizeOrder = intent1.getStringExtra("sizeName");
+                        String priceOrder = String.valueOf(product_order.getTotalMoney());
 
                         Intent intent = new Intent(v.getContext(), Order_view.class);
                         intent.putExtra("quantity", quantityOrder);
                         intent.putExtra("name", nameOrder);
                         intent.putExtra("size", sizeOrder);
                         intent.putExtra("price", priceOrder);
+
+                        productDetails.dismiss();
                     }
                 });
                 productDetails.show();

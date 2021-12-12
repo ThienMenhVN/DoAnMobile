@@ -1,17 +1,20 @@
 package com.example.food.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.food.Model.Product_order;
 import com.example.food.Model.Size;
+import com.example.food.Order_view;
 import com.example.food.R;
 
 import java.util.ArrayList;
@@ -52,6 +55,9 @@ public class SizeAdapter extends RecyclerView.Adapter<SizeAdapter.ViewHolder>{
                 Product_order product_order = ProductAdapter.product_order;
                 product_order.setPriceSize(priceSize);
                 ProductAdapter.totalMoney.setText(String.valueOf(product_order.getTotalMoney()));
+                String sizeName = sizeArrayList.get(position).getName();
+                Intent intent = new Intent(view.getContext(), ProductAdapter.class);
+                intent.putExtra("sizeName", sizeName);
             }
         });
     }
@@ -83,7 +89,6 @@ public class SizeAdapter extends RecyclerView.Adapter<SizeAdapter.ViewHolder>{
             radioButton = itemView.findViewById(R.id.radiobutton);
             itemView.setOnClickListener(this);
             itemView.setOnLongClickListener(this);
-
         }
 
         @Override
