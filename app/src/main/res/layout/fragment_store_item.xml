@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout >
+    <com.google.android.material.card.MaterialCardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/product_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="17dp"
+            tools:ignore="RtlSymmetry">
+
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/store_title"
+                    android:layout_marginStart="3dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="THE COFFEE HOUSE"
+                    android:textColor="@color/orange"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/store_location"
+                    android:layout_marginStart="3dp"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:maxLines="3"
+                    android:text="46 Nguyễn Lương Bằng"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_marginStart="15dp"
+                android:layout_width="120dp"
+                android:layout_height="85dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp">
+
+                <ImageView
+                    android:id="@+id/store_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/store1"
+                    />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>
