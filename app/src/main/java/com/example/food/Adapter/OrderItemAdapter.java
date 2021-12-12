@@ -67,13 +67,13 @@ public class OrderItemAdapter extends RecyclerView.Adapter<OrderItemAdapter.View
             deleteButton = itemView.findViewById(R.id.bush);
             deleteButton.setOnClickListener(view -> {
                 orderItemArrayList.remove(position);
+                notifyDataSetChanged();
 
                 Bill bill = new Bill();
                 bill = orderItemArrayList.get(position);
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 DatabaseReference myRef1 = database.getReference("Order_view/"+bill.getName());
                 myRef1.removeValue();
-                notifyDataSetChanged();
             });
         }
     }

@@ -7,17 +7,17 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Sign_in"
-    android:background="#FF9800">
+    android:background="@color/white">
 
     <ImageView
         android:id="@+id/Logo"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_marginLeft="80dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/logo"
+        android:src="@drawable/pattern"
         >
     </ImageView>
 
