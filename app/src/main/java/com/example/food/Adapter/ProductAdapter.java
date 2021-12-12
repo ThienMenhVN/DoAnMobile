@@ -142,10 +142,10 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                         bill.setSoLuong(s2);
                         bill.setNameSize("Vừa");
                         putData(bill);
-
                     }
                 });
                 productDetails.show();
+                productDetails.dismiss();
             }
 
         });
