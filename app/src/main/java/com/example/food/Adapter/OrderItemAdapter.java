@@ -1,5 +1,6 @@
 package com.example.food.Adapter;
 
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.food.Model.Bill;
 import com.example.food.Model.Order_item;
+import com.example.food.Order_view;
 import com.example.food.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -73,6 +75,7 @@ public class OrderItemAdapter extends RecyclerView.Adapter<OrderItemAdapter.View
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 DatabaseReference myRef1 = database.getReference("Order_view");
                 myRef1.child(bill.getName()).removeValue();
+//                FirebaseDatabase.getInstance().setPersistenceEnabled(false);
                 orderItemArrayList.remove(position);
                 notifyDataSetChanged();
             });

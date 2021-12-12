@@ -140,6 +140,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                         bill.setName(s);
                         bill.setMoney(s1);
                         bill.setSoLuong(s2);
+//                        bill.setNameSize("Vừa");
                         bill.setNameSize(s3);
                         putData(bill);
                         productDetails.dismiss();
