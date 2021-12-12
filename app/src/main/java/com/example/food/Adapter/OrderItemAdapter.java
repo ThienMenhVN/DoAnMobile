@@ -1,11 +1,13 @@
 package com.example.food.Adapter;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,7 +23,7 @@ import java.util.ArrayList;
 
 public class OrderItemAdapter extends RecyclerView.Adapter<OrderItemAdapter.ViewHolder> {
     ArrayList<Bill> orderItemArrayList;
-
+    Bill bill = new Bill();
     public OrderItemAdapter(ArrayList<Bill> orderItemArrayList) {
         this.orderItemArrayList = orderItemArrayList;
     }
@@ -66,13 +68,12 @@ public class OrderItemAdapter extends RecyclerView.Adapter<OrderItemAdapter.View
         public void deleteItemOnClick(ArrayList<Bill> orderItemArrayList, int position) {
             deleteButton = itemView.findViewById(R.id.bush);
             deleteButton.setOnClickListener(view -> {
-                orderItemArrayList.remove(position);
-
-                Bill bill = new Bill();
                 bill = orderItemArrayList.get(position);
+                Log.d("test", bill.getName());
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference myRef1 = database.getReference("Order_view/"+bill.getName());
-                myRef1.removeValue();
+                DatabaseReference myRef1 = database.getReference("Order_view");
+                myRef1.child(bill.getName()).removeValue();
+                orderItemArrayList.remove(position);
                 notifyDataSetChanged();
             });
         }
