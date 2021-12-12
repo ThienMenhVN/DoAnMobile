@@ -97,7 +97,6 @@ public class Order_view extends AppCompatActivity {
                     s3 += s2;
 
                 }
-
                 money.setText(String.valueOf(s3));
                 money2.setText(String.valueOf(s3));
                 money3.setText(String.valueOf(s3));

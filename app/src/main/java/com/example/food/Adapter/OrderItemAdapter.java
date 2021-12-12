@@ -64,21 +64,18 @@ public class OrderItemAdapter extends RecyclerView.Adapter<OrderItemAdapter.View
             orderName = itemView.findViewById(R.id.text_itemname);
             orderSize = itemView.findViewById(R.id.text_itemsize);
             orderPrice = itemView.findViewById(R.id.text_itemprice);
-
         }
 
         public void deleteItemOnClick(ArrayList<Bill> orderItemArrayList, int position) {
             deleteButton = itemView.findViewById(R.id.bush);
             deleteButton.setOnClickListener(view -> {
-                orderItemArrayList.remove(position);
-                notifyDataSetChanged();
                 Bill bill = new Bill();
                 bill = orderItemArrayList.get(position);
                 Log.d("test", bill.getName());
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 DatabaseReference myRef1 = database.getReference("Order_view");
                 myRef1.child(bill.getName()).removeValue();
-//                FirebaseDatabase.getInstance().setPersistenceEnabled(false);
+                //FirebaseDatabase.getInstance().setPersistenceEnabled(true);
                 orderItemArrayList.remove(position);
                 notifyDataSetChanged();
             });
