@@ -135,12 +135,11 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                         String s = product.getName();
                         String s1 = m.toString();
                         String s2 = numberProductDetail.getText().toString();
-                        String s3 = sizeAdapter.sizeArrayList.get(position).getName();
+                        String s3 = sizeAdapter.sizeArrayList.get(sizeAdapter.getLastCheckedPosition()).getName();
                         Bill bill = new Bill();
                         bill.setName(s);
                         bill.setMoney(s1);
                         bill.setSoLuong(s2);
-//                        bill.setNameSize("Vừa");
                         bill.setNameSize(s3);
                         putData(bill);
                         productDetails.dismiss();

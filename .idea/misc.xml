@@ -20,6 +20,7 @@
         <entry key="..\:/HK5/LTDD/DoAnMobile/app/src/main/res/layout/activity_infomation.xml" value="0.1" />
         <entry key="..\:/HK5/LTDD/DoAnMobile/app/src/main/res/layout/activity_main.xml" value="0.21850393700787402" />
         <entry key="..\:/HK5/LTDD/DoAnMobile/app/src/main/res/layout/activity_order.xml" value="0.3828571428571429" />
+        <entry key="..\:/HK5/LTDD/DoAnMobile/app/src/main/res/layout/activity_sign_in.xml" value="0.13072916666666667" />
         <entry key="..\:/HK5/LTDD/DoAnMobile/app/src/main/res/layout/dang_ky.xml" value="0.1" />
         <entry key="..\:/HK5/LTDD/DoAnMobile/app/src/main/res/layout/dialog_product_detail.xml" value="0.2697201017811705" />
         <entry key="..\:/HK5/LTDD/DoAnMobile/app/src/main/res/layout/fragment_dang_nhap.xml" value="0.1" />
@@ -33,20 +34,29 @@
         <entry key="..\:/HK5/LTDD/DoAnMobile/app/src/main/res/layout/item_product.xml" value="0.18857142857142858" />
         <entry key="..\:/HK5/LTDD/DoAnMobile/app/src/main/res/layout/item_size_product.xml" value="0.3828571428571429" />
         <entry key="..\:/HK5/LTDD/DoAnMobile/app/src/main/res/layout/item_topping_product.xml" value="0.1" />
+        <entry key="..\:/HK5/LTDD/DoAnMobile/app/src/main/res/layout/loading_screen.xml" value="0.13072916666666667" />
         <entry key="..\:/HK5/LTDD/DoAnMobile/app/src/main/res/layout/order_detail.xml" value="0.2857142857142857" />
         <entry key="..\:/HK5/LTDD/DoAnMobile/app/src/main/res/layout/order_detail_item.xml" value="0.1" />
         <entry key="..\:/HK5/LTDD/DoAnMobile/app/src/main/res/layout/toolbar.xml" value="0.14221014492753623" />
         <entry key="..\:/HK5/LTDD/DoAnMobile/app/src/main/res/layout/viewholder_order.xml" value="0.14635416666666667" />
         <entry key="..\:/HK5/LTDD/DoAnMobile/app/src/main/res/menu/bottom_navigation.xml" value="0.18857142857142858" />
+        <entry key="..\:/Users/ADMIN/Desktop/DoAnMobile/app/src/main/res/layout/activity_dang_ky.xml" value="0.1094224924012158" />
+        <entry key="..\:/Users/ADMIN/Desktop/DoAnMobile/app/src/main/res/layout/activity_fragment_user.xml" value="0.1094224924012158" />
+        <entry key="..\:/Users/ADMIN/Desktop/DoAnMobile/app/src/main/res/layout/activity_history.xml" value="0.1094224924012158" />
+        <entry key="..\:/Users/ADMIN/Desktop/DoAnMobile/app/src/main/res/layout/activity_infomation.xml" value="0.1094224924012158" />
+        <entry key="..\:/Users/ADMIN/Desktop/DoAnMobile/app/src/main/res/layout/activity_main.xml" value="0.1094224924012158" />
+        <entry key="..\:/Users/ADMIN/Desktop/DoAnMobile/app/src/main/res/layout/activity_sign_in.xml" value="0.1094224924012158" />
+        <entry key="..\:/Users/ADMIN/Desktop/DoAnMobile/app/src/main/res/layout/activity_trang_chu.xml" value="0.1094224924012158" />
+        <entry key="..\:/Users/ADMIN/Desktop/DoAnMobile/app/src/main/res/layout/fragment_dang_nhap.xml" value="0.33" />
+        <entry key="..\:/Users/ADMIN/Desktop/DoAnMobile/app/src/main/res/layout/fragment_order.xml" value="0.1094224924012158" />
+        <entry key="..\:/Users/ADMIN/Desktop/DoAnMobile/app/src/main/res/layout/fragment_store.xml" value="0.25" />
+        <entry key="..\:/Users/ADMIN/Desktop/DoAnMobile/app/src/main/res/layout/fragment_store_item.xml" value="0.4524714828897338" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/Food/app/src/main/res/layout/activity_dang_ky.xml" value="0.12447916666666667" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/Food/app/src/main/res/layout/activity_main.xml" value="0.4049586776859504" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/Food/app/src/main/res/layout/dang_ky.xml" value="0.4" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/Food/app/src/main/res/layout/dang_nhap.xml" value="0.24635416666666668" />
-        <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/activity_dang_ky.xml" value="0.12916666666666668" />
-        <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/activity_fragment_user.xml" value="0.12916666666666668" />
-        <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/activity_history.xml" value="0.12916666666666668" />
-        <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/activity_infomation.xml" value="0.12916666666666668" />
         <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/activity_main.xml" value="0.25" />
+<<<<<<< HEAD
         <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/activity_trang_chu.xml" value="0.20199275362318841" />
         <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/dialog_product_detail.xml" value="0.12916666666666668" />
         <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/fragment_dang_nhap.xml" value="0.12708333333333333" />
@@ -58,6 +68,8 @@
         <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/item_size_product.xml" value="0.12916666666666668" />
         <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/order_detail.xml" value="0.2" />
         <entry key="..\:/Users/PC/Desktop/DoAnMobile/app/src/main/res/layout/order_detail_item.xml" value="0.4" />
+=======
+>>>>>>> 0ea6bd41b6dceacea740e8df29fa6e2dbf12720a
       </map>
     </option>
   </component>
