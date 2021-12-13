@@ -14,7 +14,9 @@ import androidx.fragment.app.Fragment;
 
 import com.example.food.Model.Product;
 import com.example.food.View.Fragment_membership;
+import com.example.food.View.Fragment_news;
 import com.example.food.View.Fragment_order;
+import com.example.food.View.Fragment_store;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -36,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new Trang_chu()).commit();
+                    new Fragment_news()).commit();
         }
 
         bottomNav = findViewById(R.id.bottom_navigation);
@@ -55,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         if (Phone != null){
             if (savedInstanceState == null) {
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new Trang_chu()).commit();
+                        new Fragment_news()).commit();
             }
             data = Phone;
             Log.d("333", data);
@@ -82,12 +84,13 @@ public class MainActivity extends AppCompatActivity {
                     Fragment selectedFragment = null;
                     switch (item.getItemId()) {
                         case R.id.nav_home:
-                            selectedFragment = new Trang_chu();
+                            selectedFragment = new Fragment_news();
                             break;
                         case R.id.nav_order:
                             selectedFragment = new Fragment_order();
                             break;
                         case R.id.nav_store:
+                            selectedFragment = new Fragment_store();
                             break;
                         case R.id.nav_coupon:
                             selectedFragment = new Fragment_membership();

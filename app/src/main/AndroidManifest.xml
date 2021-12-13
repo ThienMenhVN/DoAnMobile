@@ -9,29 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Food" >
-        <activity
-            android:name=".Trang_chu"
-            android:exported="false" />
+        <activity android:name=".View.Row_data_news_product" />
         <activity
             android:name=".Sign_in"
-            android:exported="false" />
-        <activity
-            android:name=".Dang_ky"
-            android:exported="false" />
-        <activity
-            android:name=".Dang_nhap"
             android:exported="false" />
         <activity
             android:name=".HistoryActivity"
             android:exported="false" />
         <activity
             android:name=".InfomationActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Fragment_user"
-            android:exported="false" />
-        <activity
-            android:name=".DangKy"
             android:exported="false" />
         <activity
             android:name=".Order_view"
