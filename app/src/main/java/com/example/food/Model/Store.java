@@ -4,6 +4,8 @@ public class Store {
     private String location;
     private int img;
 
+    public Store(){}
+
     public Store(String location, int img) {
         this.location = location;
         this.img = img;

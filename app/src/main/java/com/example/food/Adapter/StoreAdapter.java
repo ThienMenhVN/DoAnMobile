@@ -1,5 +1,6 @@
 package com.example.food.Adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,10 +17,12 @@ import com.example.food.R;
 import java.util.ArrayList;
 
 public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.ViewHolder> {
-    ArrayList<Store> storeArrayList;
+    private ArrayList<Store> storeArrayList;
+    private Context context;
 
-    public StoreAdapter(ArrayList<Store> storeArrayList) {
+    public StoreAdapter(ArrayList<Store> storeArrayList, Context context) {
         this.storeArrayList = storeArrayList;
+        this.context = context;
     }
 
     @NonNull
