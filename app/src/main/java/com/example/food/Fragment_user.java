@@ -116,6 +116,7 @@ public class Fragment_user extends Fragment {
                     Toast.makeText(getContext(), "Bạn cần đăng nhập trước !!!", Toast.LENGTH_SHORT).show();
                 }else{
                 Intent i = new Intent(getActivity(), HistoryActivity.class);
+                i.putExtra("key",a);
                 startActivity(i);
                 }
             }

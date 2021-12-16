@@ -128,7 +128,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                         }
                     }
                 });
-//                productDetails.show();
+                productDetails.show();
                 Add.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {

@@ -11,6 +11,9 @@ public class History_item {
         this.date = date;
     }
 
+    public History_item() {
+    }
+
     public String getQuantity() {
         return quantity;
     }

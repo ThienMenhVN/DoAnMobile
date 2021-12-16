@@ -411,6 +411,7 @@
                         android:background="@drawable/ic_baseline_auto_delete_24" />
 
                     <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/delBill"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
