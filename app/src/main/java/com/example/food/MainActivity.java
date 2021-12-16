@@ -28,6 +28,7 @@ import com.google.firebase.database.ValueEventListener;
 public class MainActivity extends AppCompatActivity {
     Context context;
     String data,data1 = "key",finish;
+    int img;
 
     public static CardView orderDetail;
     public static BottomNavigationView bottomNav;
@@ -86,7 +87,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
     }
+
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
@@ -124,26 +127,5 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 }
             };
-
-    private void getData(String product) {
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("Order_view");
-        myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-
-
-                myRef.child(product).setValue(product);
-
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-
-        });
-    }
-
+    
 }
