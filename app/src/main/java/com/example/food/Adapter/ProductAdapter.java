@@ -128,6 +128,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                         }
                     }
                 });
+//                productDetails.show();
                 Add.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -142,10 +143,10 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
                         bill.setSoLuong(s2);
                         bill.setNameSize(s3);
                         putData(bill);
-                        productDetails.dismiss();
+                        productDetails.cancel();
                     }
                 });
-                productDetails.show();
+
             }
 
         });

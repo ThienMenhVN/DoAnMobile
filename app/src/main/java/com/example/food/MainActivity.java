@@ -1,5 +1,6 @@
 package com.example.food;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,7 +27,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
     Context context;
-    String data;
+    String data,data1 = "key",finish;
 
     public static CardView orderDetail;
     public static BottomNavigationView bottomNav;
@@ -49,18 +50,27 @@ public class MainActivity extends AppCompatActivity {
         context = this;
         Intent intent = getIntent();
         String Phone = intent.getStringExtra("PhoneAccount");
+        data1 = intent.getStringExtra("Null");
+
+
         if (Phone == null){
             FirebaseDatabase database = FirebaseDatabase.getInstance();
             DatabaseReference myRef = database.getReference("Order_view");
             myRef.removeValue();
         }
         if (Phone != null){
+
             if (savedInstanceState == null) {
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new Fragment_news()).commit();
             }
+
             data = Phone;
             Log.d("333", data);
+        }
+
+        if (finish != null){
+
         }
 
         orderDetail = findViewById(R.id.order_view);
@@ -68,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,Order_view.class);
-                if (data != null){
+                if (data != null && data1 != ""){
                     intent.putExtra("key",data);
                     startActivity(intent);
                 }
@@ -96,8 +106,14 @@ public class MainActivity extends AppCompatActivity {
                             selectedFragment = new Fragment_membership();
                             break;
                         case R.id.nav_else:
-                            selectedFragment = new Fragment_user();
+                            if (data == null){
+                            selectedFragment = new Fragment_user(null);
                             break;
+                            }else{
+                                selectedFragment = new Fragment_user(data);
+                                break;
+                            }
+
                     }
                     try {
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
@@ -129,4 +145,5 @@ public class MainActivity extends AppCompatActivity {
 
         });
     }
+
 }

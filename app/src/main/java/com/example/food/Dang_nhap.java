@@ -46,9 +46,10 @@ public class Dang_nhap extends Fragment {
                         if (snapshot.child(Phone.getText().toString()).exists() && Phone.getText().toString().trim() != null) {
                             User  user = snapshot.child(Phone.getText().toString()).getValue(User.class);
                             if (user.getPasswork().equals(Passwork.getText().toString())){
-                                Intent intent = new Intent(getActivity().getBaseContext(),MainActivity.class);
+                                Intent intent = new Intent(getActivity(),MainActivity.class);
                                 intent.putExtra("PhoneAccount",user.getPhone());
-                                getActivity().startActivity(intent);
+                                startActivity(intent);
+
                                 Toast.makeText(getActivity(), "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
                             }
                             else {

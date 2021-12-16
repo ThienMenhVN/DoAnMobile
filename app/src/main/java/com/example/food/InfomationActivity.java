@@ -19,6 +19,7 @@ import com.google.firebase.database.ValueEventListener;
 public class InfomationActivity extends AppCompatActivity {
     private ImageView imgCancelInfo, imgInfo;
     private TextView txtNameInfo, txtNameDetail, txtPhoneDetail, txtEmailDetail;
+    String Phone;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +27,7 @@ public class InfomationActivity extends AppCompatActivity {
 
         imgCancelInfo = findViewById(R.id.imgCancelInfo);
         txtNameInfo = findViewById(R.id.txtNameInfo);
-        imgInfo = findViewById(R.id.imgInfo);
+
         txtNameDetail = findViewById(R.id.txtNameDetail);
         txtPhoneDetail = findViewById(R.id.txtDetailPhone);
         txtEmailDetail = findViewById(R.id.txtEmailDetail);
@@ -35,14 +36,14 @@ public class InfomationActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(InfomationActivity.this, MainActivity.class);
+                i.putExtra("PhoneAccount",Phone);
                 startActivity(i);
             }
 
         });
         Intent intent = getIntent();
-        String Phone = intent.getStringExtra("PhoneAccount");
-        txtNameDetail.setText(Phone);
-//        getData(Phone);
+        Phone = intent.getStringExtra("Phone");
+        getData(Phone);
 
 
     }
@@ -63,5 +64,9 @@ public class InfomationActivity extends AppCompatActivity {
 
             }
         });
+    }
+    private  void returnMain(){
+        Intent intent = new Intent(InfomationActivity.this, MainActivity.class);
+        startActivity(intent);
     }
 }
